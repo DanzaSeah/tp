@@ -176,7 +176,7 @@ Format: `list`
 
 <br>
 
-#### Listing all Weddings : `list-weddings` or `lw`
+#### Listing all Weddings : list-weddings or lw
 
 You can see a list of all [Weddings](#adding-a-wedding--create-wedding-or-cw) in the WedLinker by entering the command `list-weddings`.
 
