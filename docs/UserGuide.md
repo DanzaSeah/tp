@@ -158,7 +158,7 @@ This combination of speed and clarity allows you to manage your wedding planning
 
 <h3 class="features">General Features</h3>
 
-#### Viewing help : `help`
+#### Viewing help : help
 
 You can find the help page by entering the command `help`.
 
@@ -248,7 +248,7 @@ Furthermore, certain edits can cause the WedLinker to behave in unexpected ways 
 
 <h3 class="features">Person Features</h3>
 
-#### Adding a person
+#### Adding a person : add
 
 You can add a new contact to WedLinker by using the `add`.
 
