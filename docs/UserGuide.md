@@ -506,7 +506,7 @@ To create a `Wedding`, type `create-wedding` followed by the name of the wedding
 * The `WEDDING_NAME` should only contain alphanumeric characters, spaces or the following characters: / . , ' & : ( )
 * `WEDDING_NAME` is case-insensitive.
 * Weddings are unique in WedLinker, there would not be any duplicated Weddings.
-* Contacts can be assigned to the Wedding using the [assign-wedding](#assigning-contact-to-a-wedding--assign-wedding-or-asw) command.
+* Contacts can be assigned to the Wedding using the [assign-wedding](#assigning-contact-to-one-or-more-weddings--assign-wedding-or-asw) command.
 * If you want to create a Wedding with a long name, it might not be shown clearly in the list.</br>
   We recommend keeping names of Weddings to a maximum of 50 characters long.</br>
   You can use [list-weddings](#listing-all-weddings--list-weddings-or-lw) instead for better visuals.
@@ -514,7 +514,7 @@ To create a `Wedding`, type `create-wedding` followed by the name of the wedding
 Examples:
 * To create a Wedding named `Wedding 1`, enter the command:
     * `create-wedding w/Wedding 1`
-* Contacts can be assigned to the Wedding using the [assign-wedding](#assign-contact-to-a-wedding-assign-wedding) command.
+* Contacts can be assigned to the Wedding using the [assign-wedding](#assigning-contact-to-one-or-more-weddings--assign-wedding-or-asw) command.
 
 <box type="warning" seamless>
 <details open>
@@ -553,7 +553,7 @@ Use the `edit-wedding` command to edit details of a Wedding, such as the Wedding
 
 Format: `edit-wedding WEDDING_NUMBER [a/ADDRESS] [d/DATE]` or `ew WEDDING_NUMBER [a/ADDRESS] [d/DATE]`
 
-To edit the details of a `Wedding`, enter the command [list-weddings](#listing-all-weddings-list-weddings) to identify the Wedding number in the `Wedding` list. <br>
+To edit the details of a `Wedding`, enter the command [list-weddings](#listing-all-Weddings--list-weddings-or-lw) to identify the Wedding number in the `Wedding` list. <br>
 Following that, type "edit-wedding" followed by the Wedding number enter the details you wish to edit and the name of the wedding.
 
 * The WEDDING_NUMBER **must be a positive integer** 1, 2, 3, …​.
@@ -624,7 +624,7 @@ You can also include up to two dates if needed, with a single date indicating a 
 * `TASK_DESCRIPTION` is case-sensitive.
 * The dates must be specified with the format `d/YYYY-MM-DD`
 * Tasks are unique in WedLinker, there would not be any duplicated tasks.
-* You can assign tasks to a contact using the [assign-task](#assigning-a-task-to-a-contact--assign-task-) command.
+* You can assign tasks to a contact using the [assign-task](#assigning-a-task-to-a-contact--assign-task-or-atask) command.
 
 Examples:
 * To create two tasks with the descriptions `Buy cake` and `Book venue`, enter the command:
@@ -649,7 +649,7 @@ Use the `assign-task` command to assign one or more Tasks to a contact.
 
 Format: `assign-task PERSON_NUMBER TASK_NUMBER...` or `atask PERSON_NUMBER TASK_NUMBER...`
 
-To assign `task(s)` to a contact, enter the command [list-tasks](#listing-all-tasks--list-tasks) to identify the Task number in the `Task` list. <br>
+To assign `task(s)` to a contact, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number in the `Task` list. <br>
 Following that, type "assign-task" followed by assigned person's positional number. and Task number(s) of tasks you wish to assign to the person.
 
 The `PERSON_NUMBER` and `TASK_NUMBER` **must be positive integers** 1, 2, 3, …​.
@@ -701,11 +701,11 @@ Use the `mark-task` command to mark one or more Tasks as completed.
 
 Format: `mark-task TASK_NUMBER...` or `mtask TASK_NUMBER...`
 
-To mark a `task` to be completed, enter the command [list-tasks](#listing-all-tasks--list-tasks) to identify the Task number(s) of task(s) you wish to mark. <br>
+To mark a `task` to be completed, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
 Following that, type `mark-task` followed by the Task number(s).
 
 * Marks a `Task` as completed.
-* The index correspond to the index of the task when in the [list-tasks](#listing-all-tasks--list-tasks) view.
+* The index correspond to the index of the task when in the [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) view.
 * The index **must be a positive integers** 1, 2, 3, …​.
 
 * The TASK_NUMBER **must be a positive integer** 1, 2, 3, …​.
@@ -721,7 +721,7 @@ Use the `unmark-task` command to mark one or more Tasks as not completed.
 
 Format: `unmark-task TASK_NUMBER...` or `untask TASK_NUMBER...`
 
-To mark a `task` as not completed, enter the command [list-tasks](#listing-all-tasks--list-tasks) to identify the Task number(s) of task(s) you wish to mark. <br>
+To mark a `task` as not completed, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
 Following that, type `unmark-task` followed by the Task number(s).
 
 * The `TASK_NUMBER` **must be a positive integer** 1, 2, 3, …​.
@@ -737,7 +737,7 @@ Use the `delete-task command` to delete a specific Task.
 
 Format: `delete-task TASK_NUMBER` or `dtask TASK_NUMBER`
 
-To delete a `task`, enter the command [list-tasks](#listing-all-tasks--list-tasks) to identify the Task number in the `task` list. <br>
+To delete a `task`, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number in the `task` list. <br>
 Following that, type "delete-task" and the Task number of the task that you wish to delete.
 
 * The `TASK_NUMBER` **must be a positive integer** 1, 2, 3, …​.
