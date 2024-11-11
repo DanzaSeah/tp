@@ -168,7 +168,7 @@ Format: `help`
 
 <br>
 
-#### Listing all Persons : `list`
+#### Listing all Persons
 
 You can see a list of all saved [Persons](#adding-a-person--add-or-a) in the WedLinker by entering the command `list`.
 
@@ -176,7 +176,7 @@ Format: `list`
 
 <br>
 
-#### Listing all Weddings : list-weddings or lw
+#### Listing all Weddings
 
 You can see a list of all [Weddings](#adding-a-wedding--create-wedding-or-cw) in the WedLinker by entering the command `list-weddings`.
 
@@ -184,7 +184,7 @@ Format: `list-weddings` or `lw`
 
 <br>
 
-#### Listing all Tasks `list-tasks` or `ltasks`
+#### Listing all Tasks
 
 You can see a list of all [Tasks](#creating-one-or-more-tasks--create-task-or-ctask) in the WedLinker by entering the command `list-tasks`.
 
@@ -192,7 +192,7 @@ Format: `list-tasks` or `ltasks`
 
 <br>
 
-#### Listing all Tags : `list-tags` or `ltags`
+#### Listing all Tags
 
 You can see a list of all [Tags](#creating-a-tag--create-tag-or-ctag) in the WedLinker by entering the command `list-tags`.
 
@@ -403,14 +403,14 @@ To create a tag, type `create-tag` followed by the name of the tag.
 * Tags are case-insensitive, so you cannot have both a 'hotel manager' and 'Hotel Manager' tag
 * If you want to create a Tag with a long name, it might not be shown clearly in the list.</br>
 We recommend keeping names of Tags to a maximum of 50 characters long.</br>
-You can use [list-tags](#listing-all-tags--list-tags-or-ltags) instead for better visuals.
+You can use [list-tags](#listing-all-tags) instead for better visuals.
 
 Examples:
 * To create a tag named `Florist`, enter the command:
     * `create-tag t/Florist`
 
 > [!TIP]
-> To display a list of all the tags that have been created, you can use the [list-tags](#listing-all-tags--list-tags-or-ltags) command.
+> To display a list of all the tags that have been created, you can use the [list-tags](#listing-all-tags) command.
 
 <box type="warning" seamless>
 <details open>
@@ -442,7 +442,7 @@ Examples:
 
 <box type="tip" seamless>
 
-**Tip:** To see all current tags, use the [list-tags](#listing-all-tags--list-tags-or-ltags) command
+**Tip:** To see all current tags, use the [list-tags](#listing-all-tags) command
 </box>
 
 <box type="warning" seamless>
@@ -509,7 +509,7 @@ To create a `Wedding`, type `create-wedding` followed by the name of the wedding
 * Contacts can be assigned to the Wedding using the [assign-wedding](#assigning-contact-to-one-or-more-weddings--assign-wedding-or-asw) command.
 * If you want to create a Wedding with a long name, it might not be shown clearly in the list.</br>
   We recommend keeping names of Weddings to a maximum of 50 characters long.</br>
-  You can use [list-weddings](#listing-all-weddings--list-weddings-or-lw) instead for better visuals.
+  You can use [list-weddings](#listing-all-weddings) instead for better visuals.
 
 Examples:
 * To create a Wedding named `Wedding 1`, enter the command:
@@ -553,7 +553,7 @@ Use the `edit-wedding` command to edit details of a Wedding, such as the Wedding
 
 Format: `edit-wedding WEDDING_NUMBER [a/ADDRESS] [d/DATE]` or `ew WEDDING_NUMBER [a/ADDRESS] [d/DATE]`
 
-To edit the details of a `Wedding`, enter the command [list-weddings](#listing-all-Weddings--list-weddings-or-lw) to identify the Wedding number in the `Wedding` list. <br>
+To edit the details of a `Wedding`, enter the command [list-weddings](#listing-all-Weddings) to identify the Wedding number in the `Wedding` list. <br>
 Following that, type "edit-wedding" followed by the Wedding number enter the details you wish to edit and the name of the wedding.
 
 * The WEDDING_NUMBER **must be a positive integer** 1, 2, 3, …​.
@@ -649,7 +649,7 @@ Use the `assign-task` command to assign one or more Tasks to a contact.
 
 Format: `assign-task PERSON_NUMBER TASK_NUMBER...` or `atask PERSON_NUMBER TASK_NUMBER...`
 
-To assign `task(s)` to a contact, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number in the `Task` list. <br>
+To assign `task(s)` to a contact, enter the command [list-tasks](#listing-all-tasks) to identify the Task number in the `Task` list. <br>
 Following that, type "assign-task" followed by assigned person's positional number. and Task number(s) of tasks you wish to assign to the person.
 
 The `PERSON_NUMBER` and `TASK_NUMBER` **must be positive integers** 1, 2, 3, …​.
@@ -701,11 +701,11 @@ Use the `mark-task` command to mark one or more Tasks as completed.
 
 Format: `mark-task TASK_NUMBER...` or `mtask TASK_NUMBER...`
 
-To mark a `task` to be completed, enter the command [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
+To mark a `task` to be completed, enter the command [list-tasks](#listing-all-tasks) to identify the Task number(s) of task(s) you wish to mark. <br>
 Following that, type `mark-task` followed by the Task number(s).
 
 * Marks a `Task` as completed.
-* The index correspond to the index of the task when in the [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) view.
+* The index correspond to the index of the task when in the [list-tasks](#listing-all-tasks) view.
 * The index **must be a positive integers** 1, 2, 3, …​.
 
 * The TASK_NUMBER **must be a positive integer** 1, 2, 3, …​.
@@ -721,7 +721,7 @@ Use the `unmark-task` command to mark one or more Tasks as not completed.
 
 Format: `unmark-task TASK_NUMBER...` or `untask TASK_NUMBER...`
 
-To mark a `task` as not completed, enter the command [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
+To mark a `task` as not completed, enter the command [list-tasks](#listing-all-tasks) to identify the Task number(s) of task(s) you wish to mark. <br>
 Following that, type `unmark-task` followed by the Task number(s).
 
 * The `TASK_NUMBER` **must be a positive integer** 1, 2, 3, …​.
@@ -737,7 +737,7 @@ Use the `delete-task command` to delete a specific Task.
 
 Format: `delete-task TASK_NUMBER` or `dtask TASK_NUMBER`
 
-To delete a `task`, enter the command [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) to identify the Task number in the `task` list. <br>
+To delete a `task`, enter the command [list-tasks](#listing-all-tasks) to identify the Task number in the `task` list. <br>
 Following that, type "delete-task" and the Task number of the task that you wish to delete.
 
 * The `TASK_NUMBER` **must be a positive integer** 1, 2, 3, …​.
