@@ -170,7 +170,7 @@ Format: `help`
 
 #### Listing all Persons : `list`
 
-You can see a list of all saved [Persons](#adding-a-person--add) in the WedLinker by entering the command `list`.
+You can see a list of all saved [Persons](#adding-a-person--add-or-a) in the WedLinker by entering the command `list`.
 
 Format: `list`
 
@@ -248,7 +248,7 @@ Furthermore, certain edits can cause the WedLinker to behave in unexpected ways 
 
 <h3 class="features">Person Features</h3>
 
-#### Adding a person : add
+#### Adding a person : add or a
 
 You can add a new contact to WedLinker by using the `add`.
 
