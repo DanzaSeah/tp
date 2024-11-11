@@ -184,7 +184,7 @@ Format: `list-weddings` or `lw`
 
 <br>
 
-#### Listing all Tasks : list-tasks or ltasks
+#### Listing all Tasks `list-tasks` or `ltasks`
 
 You can see a list of all [Tasks](#creating-one-or-more-tasks--create-task-or-ctask) in the WedLinker by entering the command `list-tasks`.
 
@@ -701,11 +701,11 @@ Use the `mark-task` command to mark one or more Tasks as completed.
 
 Format: `mark-task TASK_NUMBER...` or `mtask TASK_NUMBER...`
 
-To mark a `task` to be completed, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
+To mark a `task` to be completed, enter the command [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
 Following that, type `mark-task` followed by the Task number(s).
 
 * Marks a `Task` as completed.
-* The index correspond to the index of the task when in the [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) view.
+* The index correspond to the index of the task when in the [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) view.
 * The index **must be a positive integers** 1, 2, 3, …​.
 
 * The TASK_NUMBER **must be a positive integer** 1, 2, 3, …​.
@@ -721,7 +721,7 @@ Use the `unmark-task` command to mark one or more Tasks as not completed.
 
 Format: `unmark-task TASK_NUMBER...` or `untask TASK_NUMBER...`
 
-To mark a `task` as not completed, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
+To mark a `task` as not completed, enter the command [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) to identify the Task number(s) of task(s) you wish to mark. <br>
 Following that, type `unmark-task` followed by the Task number(s).
 
 * The `TASK_NUMBER` **must be a positive integer** 1, 2, 3, …​.
@@ -737,7 +737,7 @@ Use the `delete-task command` to delete a specific Task.
 
 Format: `delete-task TASK_NUMBER` or `dtask TASK_NUMBER`
 
-To delete a `task`, enter the command [list-tasks](#listing-all-tasks--list-tasks-or-ltasks) to identify the Task number in the `task` list. <br>
+To delete a `task`, enter the command [list-tasks](#listing-all-tasks-list-tasks-or-ltasks) to identify the Task number in the `task` list. <br>
 Following that, type "delete-task" and the Task number of the task that you wish to delete.
 
 * The `TASK_NUMBER` **must be a positive integer** 1, 2, 3, …​.
