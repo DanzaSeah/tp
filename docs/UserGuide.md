@@ -144,7 +144,7 @@ This combination of speed and clarity allows you to manage your wedding planning
   * For example: If the command specifies `help 123`, it will be interpreted as `help`.<br>
 
 * Similarly, extra labels (e.g. n/ or tk/) for commands that do not take in those labels will be processed as part of other inputs.<br>
-  * For example: When [adding a person](#adding-a-person-add), you can specify the labels `n/`, `p/`, `e/`, `a/`, `t/`, and `w/`. If the command specifies
+  * For example: When [adding a person](#adding-a-person), you can specify the labels `n/`, `p/`, `e/`, `a/`, `t/`, and `w/`. If the command specifies
   `add n/Betsy Crowe d/2020-04-11 tk/Buy flowers`, it will be interpreted as adding a person with the name "Betsy Crowe d/2020-04-11 tk/Buy flowers". <br>
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
@@ -248,7 +248,7 @@ Furthermore, certain edits can cause the WedLinker to behave in unexpected ways 
 
 <h3 class="features">Person Features</h3>
 
-#### Adding a person: `add`
+#### Adding a person
 
 You can add a new contact to WedLinker by using the `add`.
 
