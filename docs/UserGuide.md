@@ -170,7 +170,7 @@ Format: `help`
 
 #### Listing all Persons : `list`
 
-You can see a list of all saved [Persons](#adding-a-person-add) in the WedLinker by entering the command `list`.
+You can see a list of all saved [Persons](#adding-a-person--add) in the WedLinker by entering the command `list`.
 
 Format: `list`
 
