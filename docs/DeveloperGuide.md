@@ -188,7 +188,7 @@ The `Model` component handles the data and state management for the app, storing
     * **Data Storage**:
         * Maintains address book data, including lists of `Person`, `Wedding`, `Tag` and `Task` objects.
     * **Filtered Views**:
-        * Provides filtered lists of `Person` objects (e.g., search results), exposing these as unmodifiable `ObservableList`s. This allows the UI to automatically update in response to changes.
+        * Provides filtered lists of `Person` objects (e.g., search results), exposing these as an unmodifiable `ObservableList`. This allows the UI to automatically update in response to changes.
     * **User Preferences**:
         * Stores user preferences in a `UserPref` object, which is accessible externally as `ReadOnlyUserPref`.
     * **Independence**:
@@ -234,14 +234,15 @@ This section describes some noteworthy details on how certain features are imple
 
 ### Force Feature
 
-#### Implementation
-
 The Force feature is a quality of life addition for WedLinker. It enables users to bypass certain checks in the `Logic` in a controlled manner to make usage easier.
 The force feature is applicable for the following commands:
-* `Tag`: This creates a `Tag` if it does not exist in WedLinker before tagging the `Person`.
-* `Delete Tag`: This unassigns the target `Tag` from all contacts before deleting it.
-* `Assign Wedding`: This creates a `Wedding` if it does not exist in WedLinker before assigning the `Person` to the `Wedding`.
-* `Delete Wedding`: This unassigns all `Person` from the `Wedding` before deleting it.
+* `Tag`: Creates a `Tag` if it does not exist in WedLinker before tagging the `Person`.
+* `Delete Tag`: Unassigns the target `Tag` from all contacts before deleting it.
+* `Assign Wedding`: Creates a `Wedding` if it does not exist in WedLinker before assigning the `Person` to the `Wedding`.
+* `Delete Wedding`: Unassigns all `Person` from the `Wedding` before deleting it.
+* `Unassign Vendor`: Unassigns all `Task` from the `Vendor` before making the `Vendor` a `Person`.
+
+#### Implementation
 
 The force functionality can be used with the above functions by including f/ at the end of the command. Additional inputs following the f/ are extraneous and would be discarded.
 
@@ -301,8 +302,6 @@ Known bugs:
 
 ### Wedding Feature
 
-#### Implementation
-
 The Wedding Feature allows users to store details of a Wedding in WedLinker. Wedding contains the Contacts involved to facilitate easy planning and consolidation for wedding planners.
 Wedding would support the following functions:
 
@@ -311,6 +310,8 @@ Wedding would support the following functions:
 * `Edit Wedding` — Edits the information for a Wedding. Editable information includes the `Wedding Name`, `Address` and `Date`.
 * `Unassign Wedding` — Unassigns a `Person` from a Wedding.
 * `Delete Wedding` — Deletes the Wedding from WedLinker.
+
+#### Implementation
 
 Given below is an example usage scenario and how Weddings are used in WedLinker.
 
@@ -347,13 +348,13 @@ Known bugs:
 
 ### Vendors
 
-#### Implementation
-
 The `Vendor` Feature allows users to track which `Person` are `Vendors` and assign `Tasks` to them. Only `Vendors` can be assigned `Tasks`.
 Vendor would support the following functions:
 
 * `Assign Vendor` — Assigns an existing `Person` in WedLinker to become a `Vendor`. 
 * `Unassign Vendor` — Unassigns a `Vendor` to become a non-vendor `Person` contact. 
+
+#### Implementation
 
 Given below is an example usage scenario and how Vendors are used in WedLinker.
 
@@ -391,6 +392,8 @@ There are different types of `Task` to support different requirements for the us
 * `Unassign Task` —  Unassigns a `Task` from a `Vendor`. 
 * `Delete Task` —  Deletes a `Task` from WedLinker. 
 
+#### Implementation
+
 Given below is an example usage scenario and how Tasks are used in WedLinker.
 
 Step 1. The user launches the application, `Tasks` are loaded into the `Model`.
@@ -409,11 +412,12 @@ Step 6. The user executes `delete-task 1 ` to delete the `Task` at index 1 of th
 WedLinker features a split-view interface designed to display different lists side by side. The left side of the screen consistently shows the `Person List`, while the right side dynamically displays one of the following lists based on user input: `Wedding List`, `Task List`, or `Tag List`.
 This functionality is managed through an enumeration that defines the available views: `WEDDING`, `TASK`, and `TAG`. The system switches between these views based on the user's actions, ensuring a flexible and intuitive user experience.
 
-
 `View` supports the following functions: 
 `List Weddings` —  displays a list of all weddings.
 `List Tasks` —  displays a list of all tasks.
 `List Tags` —  displays a list of all tags.
+
+#### Implementation
 
 Given below is an example usage scenario and how Tasks are used in WedLinker.
 
@@ -545,13 +549,13 @@ Those without any stars are user stories that were considered but will not be im
     Use case ends.
 
 ### **Use case: UC02 — List all Weddings**
-Similar to [<ins>UC01](#use-case-uc01list-all-contacts) except to view weddings instead of contacts.
+Similar to [<ins>UC01](#use-case-uc01-list-all-contacts) except to view weddings instead of contacts.
 
 ### **Use case: UC03 — List all Tasks**
-Similar to [<ins>UC01](#use-case-uc01list-all-contacts) except to view tasks instead of contacts.
+Similar to [<ins>UC01](#use-case-uc01-list-all-contacts) except to view tasks instead of contacts.
 
 ### **Use case: UC04 — List all Tags**
-Similar to [<ins>UC01](#use-case-uc01list-all-contacts) except to view tags instead of contacts.
+Similar to [<ins>UC01](#use-case-uc01-list-all-contacts) except to view tags instead of contacts.
 
 ---
 
@@ -575,13 +579,13 @@ Similar to [<ins>UC01](#use-case-uc01list-all-contacts) except to view tags inst
       Use case ends.
 
 ### **Use case: UC06 — Create a Wedding**
-Similar to [<ins>UC05](#use-case-uc05create-a-contact) except adding a wedding to WedLinker instead of a Contact
+Similar to [<ins>UC05](#use-case-uc05-create-a-contact) except adding a wedding to WedLinker instead of a Contact
 
 ### **Use case: UC07 — Create a Task**
-Similar to [<ins>UC05](#use-case-uc05create-a-contact) except adding a task to WedLinker instead of a Contact
+Similar to [<ins>UC05](#use-case-uc05-create-a-contact) except adding a task to WedLinker instead of a Contact
 
 ### **Use case: UC08 — Create a Tag**
-Similar to [<ins>UC05](#use-case-uc05create-a-contact) except adding a tag to WedLinker instead of a Contact
+Similar to [<ins>UC05](#use-case-uc05-create-a-contact) except adding a tag to WedLinker instead of a Contact
 
 ### **Use case: UC09 — Add Phone Number to Contact**
 
@@ -590,7 +594,7 @@ Similar to [<ins>UC05](#use-case-uc05create-a-contact) except adding a tag to We
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
 2. User requests to add phone number for a contact with the corresponding details.
 3. The system adds the phone number to the contact and displays a success message.
 4. The system displays the updated contact information in the address book.
@@ -608,17 +612,17 @@ Similar to [<ins>UC05](#use-case-uc05create-a-contact) except adding a tag to We
       Use case resumes at step 1.
 
 ### **Use case: UC10 — Add Address to Contact** 
-Similar to [<ins>UC09](#use-case-uc09add-phone-number-to-contact) except duplicated addresses are allowed
+Similar to [<ins>UC09](#use-case-uc09-add-phone-number-to-contact) except duplicated addresses are allowed
 
 ### **Use case: UC11 — Add Email to Contact**
-Similar to [<ins>UC09](#use-case-uc09add-phone-number-to-contact) except duplicated email addresses are allowed
+Similar to [<ins>UC09](#use-case-uc09-add-phone-number-to-contact) except duplicated email addresses are allowed
 
 ### **Use case: UC12 — Tag a Contact**
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
-2. User <ins>lists all tags [(UC04)](#use-case-uc04list-all-tags)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc010-list-all-contacts)</ins>.
+2. User <ins>lists all tags [<ins>(UC04)](#use-case-uc04-list-all-tags)</ins>.
 3. User requests to tag a contact with a specified tag.
 4. System displays the updated contact with the new tag assigned to them, in the list of contacts.
 
@@ -651,8 +655,8 @@ Similar to [<ins>UC09](#use-case-uc09add-phone-number-to-contact) except duplica
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
-2. User <ins>lists all tags [(UC04)](#use-case-uc04list-all-tags)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
+2. User <ins>lists all tags [<ins>(UC04)](#use-case-uc04-list-all-tags)</ins>.
 3. User requests to untag a contact with a specified tag.
 4. System displays the updated contact with the tag unassigned from them, in the list of contacts.
 
@@ -688,27 +692,27 @@ Similar to [<ins>UC09](#use-case-uc09add-phone-number-to-contact) except duplica
     Use case ends.
 
 ### **Use case: UC15 — Search for Contacts by Tag**
-Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searching for contacts by tag.
+Similar to [<ins>UC14](#use-case-uc14-search-for-contacts-by-name) except searching for contacts by tag.
 
 ### **Use case: UC16 — Search for Contacts by Wedding**
-Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searching for contacts by wedding.
+Similar to [<ins>UC14](#use-case-uc14-search-for-contacts-by-name) except searching for contacts by wedding.
 
 ### **Use case: UC17 — Search for Contacts by Phone Number**
-Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searching for contacts by phone number.
+Similar to [<ins>UC14](#use-case-uc14-search-for-contacts-by-name) except searching for contacts by phone number.
 
 ### **Use case: UC18 — Search for Contacts by Address**
-Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searching for contacts by address.
+Similar to [<ins>UC14](#use-case-uc14-search-for-contacts-by-name) except searching for contacts by address.
 
 ### **Use case: UC19 — Search for Contacts by Email Address**
-Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searching for contacts by email address.
+Similar to [<ins>UC14](#use-case-uc14-search-for-contacts-by-name) except searching for contacts by email address.
 
 ---
 
 ### **Use case: UC20 — Search for Wedding by Wedding Name**
-Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searching for wedding by wedding name.
+Similar to [<ins>UC14](#use-case-uc14-search-for-contacts-by-name) except searching for wedding by wedding name.
 
 ### **Use case: UC21 — Search for Task by Task Name**
-Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searching for task by task name.
+Similar to [<ins>UC14](#use-case-uc14-search-for-contacts-by-name) except searching for task by task name.
 
 ---
 
@@ -716,8 +720,8 @@ Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searchi
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
-2. User <ins>lists all weddings [(UC02)](#use-case-uc02list-all-weddings)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
+2. User <ins>lists all weddings [<ins>(UC02)](#use-case-uc02-list-all-weddings)</ins>.
 3. User requests to assign a contact to a wedding.
 4. System displays the contact being associated with the specified wedding, in the list of contacts.
 
@@ -751,8 +755,8 @@ Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searchi
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
-2. User <ins>lists all weddings [(UC02)](#use-case-uc02list-all-weddings)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
+2. User <ins>lists all weddings [<ins>(UC02)](#use-case-uc02-list-all-weddings)</ins>.
 3. User requests to unassign a contact from a wedding.
 4. System displays the contact no longer being associated with the specified wedding, in the list of contacts.
 
@@ -782,7 +786,7 @@ Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searchi
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
 2. User requests to assign a contact as a Vendor.
 3. System displays the contact being designated as a vendor, in the list of contacts.
 
@@ -808,7 +812,7 @@ Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searchi
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
 2. User requests to unassign the contact as a vendor.
 3. System shows the contact is no longer a vendor in the list of contacts.
 
@@ -845,7 +849,7 @@ Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searchi
 
 **MSS**
 
-1. User <ins>lists all tasks [(UC03)](#use-case-uc03list-all-tasks)</ins>.
+1. User <ins>lists all tasks [<ins>(UC03)](#use-case-uc03-list-all-tasks)</ins>.
 2. User requests to assign a task to a contact.
 3. System displays the contact being assigned with the specified task, in the list of contacts.
 
@@ -870,7 +874,7 @@ Similar to [<ins>UC14](#use-case-uc14search-for-contacts-by-name) except searchi
       Use case resumes at step 1.
 
 ### **Use case: UC27 — Unassign one or more Tasks from a Contact**
-Similar to [<ins>UC26](#use-case-uc26assign-one-or-more-tasks-to-a-contact) except un-assigning tasks from a contact and an additional extension. 
+Similar to [<ins>UC26](#use-case-uc26-assign-one-or-more-tasks-to-a-contact) except un-assigning tasks from a contact and an additional extension. 
 
 * 2b. A specified task is not assigned to the contact.
     * 2b1. System displays an error message.
@@ -881,7 +885,7 @@ Similar to [<ins>UC26](#use-case-uc26assign-one-or-more-tasks-to-a-contact) exce
 
 **MSS**
 
-1. User <ins>lists all tasks [(UC03)](#use-case-uc03list-all-tasks)</ins>.
+1. User <ins>lists all tasks [<ins>(UC03)](#use-case-uc03-list-all-tasks)</ins>.
 2. User requests to mark specified task(s) as completed.
 3. System displays the updated task status of the specified task(s) in the list of tasks.
 
@@ -897,7 +901,7 @@ Similar to [<ins>UC26](#use-case-uc26assign-one-or-more-tasks-to-a-contact) exce
       Use case resumes at step 1.
 
 ### **Use case: UC29 — Mark one or more Tasks as not Completed**
-Similar to [<ins>UC28](#use-case-uc28mark-one-or-more-tasks-as-completed) except marking tasks as not completed.
+Similar to [<ins>UC28](#use-case-uc28-mark-one-or-more-tasks-as-completed) except marking tasks as not completed.
 
 ---
 
@@ -905,7 +909,7 @@ Similar to [<ins>UC28](#use-case-uc28mark-one-or-more-tasks-as-completed) except
 
 **MSS**
 
-1. User <ins>lists all contacts [(UC01)](#use-case-uc01list-all-contacts)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
 2. User requests to delete a specific person in the list.
 3. System deletes the contact.
 
@@ -921,7 +925,7 @@ Similar to [<ins>UC28](#use-case-uc28mark-one-or-more-tasks-as-completed) except
       Use case resumes at step 1.
 
 ### **Use case: UC31 — Delete Wedding**
-Similar to [<ins>UC30](#use-case-uc30delete-contact) except deleting wedding and two additional extensions.
+Similar to [<ins>UC30](#use-case-uc30-delete-contact) except deleting wedding and two additional extensions.
 
 * 2b. User specified to force the deletion of the wedding.
     * 2b1. System displays an updated list of contacts with the specified wedding not assigned to any contacts.
@@ -934,10 +938,10 @@ Similar to [<ins>UC30](#use-case-uc30delete-contact) except deleting wedding and
       Use case resumes at step 1.
 
 ### **Use case: UC32 — Delete Task**
-Similar to [<ins>UC30](#use-case-uc30delete-contact) except deleting task.
+Similar to [<ins>UC30](#use-case-uc30-delete-contact) except deleting task.
 
 ### **Use case: UC33 — Delete Tag**
-Similar to [<ins>UC30](#use-case-uc30delete-contact) except deleting tag and two additional extensions.
+Similar to [<ins>UC30](#use-case-uc30-delete-contact) except deleting tag and two additional extensions.
 
 * 2b. User specified to force the deletion of the tag.
     * 2b1. System displays an updated list of contacts with the specified tag absent from all contacts.
@@ -955,7 +959,7 @@ Similar to [<ins>UC30](#use-case-uc30delete-contact) except deleting tag and two
 
 **MSS**
 
-1. User <ins>lists all contacts (UC01)</ins>.
+1. User <ins>lists all contacts [<ins>(UC01)](#use-case-uc01-list-all-contacts)</ins>.
 2. User requests to edit the details of a person and specifies what they want to change the details to.
 3. System changes the existing details to the specified details and shows list of persons with new details.
 
@@ -987,7 +991,7 @@ Similar to [<ins>UC30](#use-case-uc30delete-contact) except deleting tag and two
       Use case resumes at step 1.
 
 ### **Use case: UCSH02 — Edit details for a Wedding**
-Similar to [<ins>UCSH01](#use-case-ucsh01edit-details-for-a-contact) except editing for wedding.
+Similar to [<ins>UCSH01](#use-case-ucsh01-edit-details-for-a-contact) except editing for wedding.
 
 
 ### **Use case: UCSH03 — Clear all contacts**
@@ -1806,10 +1810,13 @@ applied to edited data, but specific expected results will differ. <br><br>
 <h3 class="features">Tag Features</h3>
 
 #### Creating Tag
+
 1. **Creating a tag when `Tag 1` is not in the list of `Tags`.**
 
    1. **Test case**: `create-tag w/Tag1`<br>
       **Expected**: `Tag1` is added to list of `Tags`. Details of the added tag are shown.
+
+<br>
 
 2. **Creating a tag when `Tag 1` is in the list of `Tags`.**
 
@@ -1819,48 +1826,71 @@ applied to edited data, but specific expected results will differ. <br><br>
    2. **Test case**: `create-tag w/tag1`<br>
       **Expected**: No tags are added to list of `Tags`. Error details shown.
 
+<br>
+
 #### Deleting Tag
+
 1. **Deleting a tag when `Tag 1` is in the list of `Tags`.**
 
    1. **Test case**: `delete-tag w/Tag1`<br>
       **Expected**: `Tag1` is removed from list of `Tags`. Details of the removed tag are shown.
 
+<br>
+
 2. **Deleting a tag when `Tag 1` is not in the list of `Tags`.**
    1. **Test case**: `delete-tag w/Tag1`<br>
       **Expected**: No tags are removed from list of `Tags`. Error details shown.
 
+<br>
+
 #### Tagging contact
+
 1. **Tagging the first contact when `Tag 1` is in the list of `Tags` and the first contact is not tagged with `Tag1`.**
 
     1. **Test case**: `tag 1 t/Tag1`<br>
        **Expected**: 1st contact is tagged with `Tag1`. Details of the updated contact are shown.
 
+<br>
+
 2. **Tagging the first contact when `Tag 1` is in the list of `Tags` and the first contact is already tagged with `Tag1`.**
     1. **Test case**: `tag 1 t/Tag1`<br>
        **Expected**: No contacts are tagged. Error details shown.
 
+<br>
+
 3. **Tagging the first contact when `Tag1` is in the list of `Tags` and the first contact is already tagged with `Tag1`.**
    1. **Test case**: `tag 1 t/Tag1`<br>
       **Expected**: No contacts are tagged. Error details shown.
-   
+
+<br>
+
 4. **Tagging the first contact when `Tag1` is not in the list of `Tags`.**
 
    1. **Test case**: `tag 1 t/Tag1`<br>
       **Expected**: No contact is tagged. Error details shown.
 
+<br>
+
    2. **Test case**: `tag 1 t/Tag1 f/`<br>
       **Expected**: 1st contact is tagged with newly created `Tag1`. Details of the updated contact are shown.
 
+<br>
+
 #### Untagging contact
+
 1. **Untagging the first contact when the first contact is tagged with `Tag1`.**
 
    1. **Test case**: `untag 1 w/Tag1`<br>
       **Expected**: `Tag1` is removed from their contact card.
 
+<br>
+
 2. **Untagging the first contact when the first contact is not tagged with `Tag1`.**
 
    1. **Test case**: `untag 1 w/Tag1`<br>
       **Expected**: No contacts are untagged. Error details shown.
+
+<br>
 
 ---
 
